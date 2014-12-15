@@ -23,20 +23,7 @@ class GamesController extends BaseController
         return View::make('Games.index')->with(compact('dataCatGame', 'dataGamesNew', 'hide_right', 'nameCat'));
     }
 
-    /**
-     * Video By Category List
-     * @return Respanse
-     */
-    public function getGamesByCategory($cat_id)
-    {
-        $dataGames = Games::where('cat_id', $cat_id)->where('active', '=', 1)->orderBy('created', 'desc')->limit(16)->get();
-        foreach($dataGames as $cat){
-            $cat_name = $cat->cat_name;
-            break;
-        }
-        $hide_right = 1;
-        return View::make('Games.games_cat')->with(compact('dataGames', 'cat_name', 'hide_right'));
-    }
+
 
     /**
      * [getVideoDetail description]
