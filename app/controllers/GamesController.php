@@ -23,8 +23,6 @@ class GamesController extends BaseController
         return View::make('Games.index')->with(compact('dataCatGame', 'dataGamesNew', 'hide_right', 'nameCat'));
     }
 
-
-
     /**
      * [getVideoDetail description]
      * @return [type] [description]
